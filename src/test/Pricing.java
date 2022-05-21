@@ -27,24 +27,37 @@ public class Pricing {
 
     public static void info(CustomerForm com) {
 
-        if (0 > com.getAge()) {
-            System.out.println("Error：年齢の値を正しく入力してください。（”0”以上の値で入力してください）");
-        } else if (199 <= com.getAge()) {
-            System.out.println("Error：年齢の値を正しく入力してください。（”199”以下の値で入力してください）");
-        } else if (sexM.equals(com.getGender()) || sexF.equals(com.getGender())) {
+        if (199 <= com.getAge() || 0 > com.getAge()) {
+            System.out.println("Error：年齢の値を正しく入力してください。（”0”〜”199”以上の値で入力してください）");
+            return;
+        }
+        if (!(sexM.equals(com.getGender()) || sexF.equals(com.getGender()))) {
+            System.out.println("Error：性別の値が正しくありません。（”男”又は”女”で入力してください）");
+            return;
+        }
 
-            if (ageSet > com.getAge()) {
-                if (sexM.equals(com.getGender())) {
-                    System.out.println(com.getName() + "くんは本日、" + "半額で" + round(basePriceSet * 0.5) + "円です。");
-                } else if(sexF.equals(com.getGender())) {
-                    System.out.println(com.getName() + "ちゃんは本日、" + "半額で" + round(basePriceSet * 0.5) + "円です。");
-                }
-            } else if (sexSet.equals(com.getGender())) {
-                    System.out.println(com.getName() + "様は本日、" + basePriceSet + "円です。");
-            } else if (eventDaySet.equals(CallDayWeek())) {
-                    System.out.println(com.getName() + "様は本日、" + CallDayWeek() + "につき、3割引で" + round(basePriceSet * 0.7) + "円です。");
+        if (ageSet > com.getAge()) {
+            if (sexM.equals(com.getGender())) {
+                System.out.println(com.getName() + "くんは本日、" + "半額で" + round(basePriceSet * 0.5) + "円です。");
+                return;
+            }
+            if (sexF.equals(com.getGender())) {
+                System.out.println(com.getName() + "ちゃんは本日、" + "半額で" + round(basePriceSet * 0.5) + "円です。");
+                return;
+            }
+        }
 
-            } else System.out.println(com.getName() + "様は本日、" + basePriceSet + "円です。");
-        }else System.out.println("Error 性別の値が正しくありません。（”男”又は”女”で入力してください）");
+        if (sexSet.equals(com.getGender())) {
+            System.out.println(com.getName() + "様は本日、" + basePriceSet + "円です。");
+            return;
+            }
+        if (eventDaySet.equals(CallDayWeek())) {
+            System.out.println(com.getName() + "様は本日、" + CallDayWeek() + "につき、3割引で" + round(basePriceSet * 0.7) + "円です。");
+            return;
+        }
+        else {System.out.println(com.getName() + "様は本日、" + basePriceSet + "円です。");
+        }
+
     }
+
 }
