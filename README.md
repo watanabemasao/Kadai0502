@@ -53,3 +53,9 @@ no5〜no8はエラー排出の確認用のリストとなっております。
   **LocalDate.now**にて今日の曜日を取得した後、値を**getValue**にて数値型に変換後**callDayWeek**にて配列の番地を読み取り**CallDayWeek**に送るためのクラスメソッドです。  
   曜日は７日間固定の為これ以上インデックスの中身が変わることが無いためこちらの変更を採用しました。
 2. Pricing内、料金選別用の条件分岐に関するネストを改善しました。
+3. Pricing内の曜日取得に関するコードの記述を**DateTimeFormatter**に最変更。
+4. Pricing内の記述の仕方を一部変更。
+5. finalな定数名を**UPPER_SNAKECASE**に変更。
+6. **CustomerForm comの**因数名を**CustomerForm Classify**に変更。
+7. **CustomerForm comの**コメント修正。
+

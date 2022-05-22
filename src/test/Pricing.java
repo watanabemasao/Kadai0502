@@ -1,4 +1,4 @@
-package java;
+package test;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ import static java.lang.Math.round;
 public class Pricing {
     private static final String SEX_M = "男";
     private static final String SEX_F = "女";
-//----------必要に応じて条件を変更する際はSetの値を変更する。------------------//
+//-----------------------必要に応じて条件を変更。-----------------------------//
     private static final  String SEX_SETTING = SEX_M;
 
     private static final int AGE_SETTING = 13;

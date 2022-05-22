@@ -1,4 +1,4 @@
-package java;
+package test;
 
 public class CustomerForm {
 
