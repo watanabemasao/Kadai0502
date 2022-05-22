@@ -1,24 +1,24 @@
-package test;
+package java;
 
 public class CustomerForm {
 
-    private final int age;
-    private final String name;
-    private final String gender;
+    private final int AGE;
+    private final String NAME;
+    private final String GENDER;
 
 
     public CustomerForm(int age, String name, String gender) {
-        this.age = age;
-        this.name = name;
-        this.gender = gender;
+        this.AGE = age;
+        this.NAME = name;
+        this.GENDER = gender;
     }
     public int getAge() {
-        return this.age;
+        return this.AGE;
     }
     public String getName() {
-        return this.name;
+        return this.NAME;
     }
     public String getGender() {
-        return this.gender;
+        return this.GENDER;
     }
 }

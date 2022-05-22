@@ -1,4 +1,4 @@
-package test;
+package java;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -8,15 +8,15 @@ import java.util.Locale;
 import static java.lang.Math.round;
 
 public class Pricing {
-    private static final String sexM = "男";
-    private static final String sexF = "女";
+    private static final String SEX_M = "男";
+    private static final String SEX_F = "女";
 //----------必要に応じて条件を変更する際はSetの値を変更する。------------------//
-    private static final  String sexSet = sexM;
+    private static final  String SEX_SETTING = SEX_M;
 
-    private static final int ageSet = 13;
-    private static final String eventDaySet = "土曜日";
+    private static final int AGE_SETTING = 13;
+    private static final String EVENT_DAY = "土曜日";
 
-    private static final int basePriceSet = 2000;
+    private static final int BASE_PRICE_SET = 2000;
 //----------------------------------------------------------------------//
     private static String CallDayWeek() {
          LocalDate localDate = LocalDate.now();
@@ -24,37 +24,37 @@ public class Pricing {
          String format = localDate.format(formmater);
     return format;
 }
-    public static void info(CustomerForm com) {
+    public static void info(CustomerForm Classify) {
 
-        if (199 <= com.getAge() || 0 > com.getAge()) {
+        if (Classify.getAge() < 0 || 199 <= Classify.getAge()) {
             System.out.println("Error：年齢の値を正しく入力してください。（”0”〜”199”以上の値で入力してください）");
             return;
         }
-        if (!(sexM.equals(com.getGender()) || sexF.equals(com.getGender()))) {
+        if (!(SEX_M.equals(Classify.getGender()) || SEX_F.equals(Classify.getGender()))) {
             System.out.println("Error：性別の値が正しくありません。（”男”又は”女”で入力してください）");
             return;
         }
 
-        if (ageSet > com.getAge()) {
-            if (sexM.equals(com.getGender())) {
-                System.out.println(com.getName() + "くんは本日、" + "半額で" + round(basePriceSet * 0.5) + "円です。");
+        if (AGE_SETTING > Classify.getAge()) {
+            if (SEX_M.equals(Classify.getGender())) {
+                System.out.println(Classify.getName() + "くんは本日、" + "半額で" + round(BASE_PRICE_SET * 0.5) + "円です。");
                 return;
             }
-            if (sexF.equals(com.getGender())) {
-                System.out.println(com.getName() + "ちゃんは本日、" + "半額で" + round(basePriceSet * 0.5) + "円です。");
+            if (SEX_F.equals(Classify.getGender())) {
+                System.out.println(Classify.getName() + "ちゃんは本日、" + "半額で" + round(BASE_PRICE_SET * 0.5) + "円です。");
                 return;
             }
         }
 
-        if (sexSet.equals(com.getGender())) {
-            System.out.println(com.getName() + "様は本日、" + basePriceSet + "円です。");
+        if (SEX_SETTING.equals(Classify.getGender())) {
+            System.out.println(Classify.getName() + "様は本日、" + BASE_PRICE_SET + "円です。");
             return;
             }
-        if (eventDaySet.equals(CallDayWeek())) {
-            System.out.println(com.getName() + "様は本日、" + CallDayWeek() + "につき、3割引で" + round(basePriceSet * 0.7) + "円です。");
+        if (EVENT_DAY.equals(CallDayWeek())) {
+            System.out.println(Classify.getName() + "様は本日、" + CallDayWeek() + "につき、3割引で" + round(BASE_PRICE_SET * 0.7) + "円です。");
             return;
         }
-        else {System.out.println(com.getName() + "様は本日、" + basePriceSet + "円です。");
+        else {System.out.println(Classify.getName() + "様は本日、" + BASE_PRICE_SET + "円です。");
         }
 
     }
