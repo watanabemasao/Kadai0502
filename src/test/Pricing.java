@@ -2,6 +2,8 @@ package test;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 import static java.lang.Math.round;
 
@@ -17,14 +19,11 @@ public class Pricing {
     private static final int basePriceSet = 2000;
 //----------------------------------------------------------------------//
     private static String CallDayWeek() {
-        String[] callDayWeek = {"","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日","日曜日"};
-        LocalDate now = LocalDate.now();
-        DayOfWeek day = now.getDayOfWeek();
-        int i = day.getValue();
-       return callDayWeek[i];
-    }
-
-
+         LocalDate localDate = LocalDate.now();
+         DateTimeFormatter formmater = DateTimeFormatter.ofPattern("EEEE", Locale.JAPANESE);
+         String format = localDate.format(formmater);
+    return format;
+}
     public static void info(CustomerForm com) {
 
         if (199 <= com.getAge() || 0 > com.getAge()) {
