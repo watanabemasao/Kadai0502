@@ -57,5 +57,5 @@ no5〜no8はエラー排出の確認用のリストとなっております。
 4. Pricing内の記述の仕方を一部変更。
 5. finalな定数名を**UPPER_SNAKECASE**に変更。
 6. **CustomerForm comの**因数名を**CustomerForm Classify**に変更。
-7. **CustomerForm comの**コメント修正。
+7. **CustomerForm**内コメント修正。
 
