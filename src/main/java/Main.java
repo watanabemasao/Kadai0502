@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(final String[] args) {
         MenuProduct menuProduct = new MenuProduct();
-        CustomerList customerList = new CustomerList();
         Scanner scanner = new Scanner(System.in);
         System.out.println("年齢を入力してください");
         int scannerAge = Integer.parseInt(scanner.next());
@@ -12,12 +11,10 @@ public class Main {
         String scannerName = String.format(scanner.next());
         System.out.println("性別を入力してください");
         String scannerGender = String.format(scanner.next());
-        customerList.setScannerAge(scannerAge);
-        customerList.setScannerName(scannerName);
-        customerList.setScannerGender(scannerGender);
+        CustomerList customerList
+                = new CustomerList(scannerAge, scannerName, scannerGender);
         System.out.println("=====================================");
-        System.out.println(CinemaPricing.cinemaInfo(customerList.
-                customerList().get(0)));
+        System.out.println(CinemaPricing.cinemaInfo(customerList.customerList().get(0)));
         System.out.println("=====================================");
         System.out.println("ドリンクをお選びください");
         System.out.println("--------------------------------------");

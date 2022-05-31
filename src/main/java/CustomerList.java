@@ -1,6 +1,7 @@
 package main.java;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CustomerList {
@@ -8,10 +9,17 @@ public class CustomerList {
     private String scannerName;
     private String scannerGender;
 
-    public ArrayList<CustomerForm> customerList() {
-        var no0 = new CustomerForm(scannerAge, scannerName, scannerGender);
-        return new ArrayList<>(List.of(no0));
+    public CustomerList(final int scannerAge,
+                        final String scannerName, final String scannerGender) {
+        this.scannerAge = scannerAge;
+        this.scannerName = scannerName;
+        this.scannerGender = scannerGender;
     }
+
+   // public ArrayList<CustomerForm> customerList() {
+      //  Collections.singletonList(new CustomerForm(scannerAge, scannerName, scannerGender));
+      //  return new ArrayList<>(List.of(no0));
+   // }
 
     public void setScannerAge(final int scannerAge) {
         this.scannerAge = scannerAge;
