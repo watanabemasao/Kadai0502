@@ -10,6 +10,8 @@ public final class CustomerForm {
         this.name = name;
         this.gender = gender;
     }
+
+
     int getAge() {
         return age;
     }

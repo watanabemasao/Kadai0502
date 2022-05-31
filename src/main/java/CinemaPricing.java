@@ -24,7 +24,7 @@ public class CinemaPricing {
                 = DateTimeFormatter.ofPattern("EEEE", Locale.JAPANESE);
         return localDate.format(formatter);
     }
-    static String cinemaInfo(final CustomerForm customerForm) {
+    public static String cinemaInfo(final CustomerForm customerForm) {
 
         if (customerForm.getAge() < 0 || 199 <= customerForm.getAge()) {
             return ("Error：年齢の値を正しく入力してください。"
@@ -44,11 +44,13 @@ public class CinemaPricing {
                     + cinemaHalfPricing() + "円です。");
         }
 
-        if (CinemaPricing.SEX_SETTING.equals(customerForm.getGender())) {
+        if (CinemaPricing.SEX_SETTING
+                .equals(customerForm.getGender())) {
             return (customerForm.getName() + "様は本日、"
                     + cinemaBasePrice() + "円です。");
         }
-        if (CinemaPricing.CINEMA_EVENT_DAY.equals(CinemaPricing.callDayWeek())) {
+        if (CinemaPricing.CINEMA_EVENT_DAY
+                .equals(CinemaPricing.callDayWeek())) {
             return (customerForm.getName() + "様は本日、"
                     + CinemaPricing.callDayWeek() + "につき、3割引で"
                     + cinemaDiscountPrice() + "円です。");
@@ -66,4 +68,6 @@ public class CinemaPricing {
     public static int cinemaDiscountPrice() {
         return (int) round(CinemaPricing.CINEMA_BASE_PRICE_SET * 0.7);
     }
+
 }
+
