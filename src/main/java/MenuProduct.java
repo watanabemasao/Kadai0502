@@ -4,8 +4,7 @@ import java.util.Map;
 public class MenuProduct {
     private static final String FOOD_PRICE = "フード";
     private static final String DRINK_PRICE = "ドリンク";
-    private static final Map<String, Map<String, Integer>> MENU_MAP
-            = new HashMap<>();
+    private static final Map<String, Map<String, Integer>> MENU_MAP = new HashMap<>();
     public MenuProduct() {
         MENU_MAP.put(DRINK_PRICE, new HashMap<>());
         MENU_MAP.put(FOOD_PRICE, new HashMap<>());

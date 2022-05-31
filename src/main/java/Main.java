@@ -3,7 +3,6 @@ package main.java;
 import java.util.Scanner;
 public class Main {
     public static void main(final String[] args) {
-        MenuProduct menuProduct = new MenuProduct();
         Scanner scanner = new Scanner(System.in);
         System.out.println("年齢を入力してください");
         int scannerAge = Integer.parseInt(scanner.next());
