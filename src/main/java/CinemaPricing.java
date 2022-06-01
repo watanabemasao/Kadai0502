@@ -9,6 +9,9 @@ import static java.lang.Math.round;
 public class CinemaPricing {
     private static final String SEX_M = "男";
     private static final String SEX_F = "女";
+    private static final int MINIMUM_AGE = 0;
+    private static final int MAXIMUM_AGE = 199;
+
     //-----------------------必要に応じて条件を変更。-----------------------------//
     private static final String SEX_SETTING = CinemaPricing.SEX_M;
 
@@ -24,9 +27,9 @@ public class CinemaPricing {
                 = DateTimeFormatter.ofPattern("EEEE", Locale.JAPANESE);
         return localDate.format(formatter);
     }
-    public static String cinemaInfo(final CustomerForm customerForm) {
+    public String cinemaInfo(final CustomerForm customerForm) {
 
-        if (customerForm.getAge() < 0 || 199 <= customerForm.getAge()) {
+        if (customerForm.getAge() < MINIMUM_AGE || MAXIMUM_AGE <= customerForm.getAge()) {
             return ("Error：年齢の値を正しく入力してください。"
                     + "（”0”〜”199”以上の値で入力してください）");
         }
@@ -70,4 +73,3 @@ public class CinemaPricing {
     }
 
 }
-

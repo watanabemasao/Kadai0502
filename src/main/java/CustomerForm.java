@@ -11,13 +11,14 @@ public final class CustomerForm {
         this.gender = gender;
     }
 
-
     int getAge() {
         return age;
     }
+
     String getName() {
         return name;
     }
+
     String getGender() {
         return gender;
     }
